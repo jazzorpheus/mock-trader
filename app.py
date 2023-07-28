@@ -162,7 +162,7 @@ def history():
     # Make a list of totals entries corresponding to each transaction
     totals = []
     for i in range(count):
-        totals.append(abs(userdata[i]["total"]))
+        totals.append(abs(float(userdata[i]["total"])))
     return render_template(
         "history.html",
         userdata=userdata,
