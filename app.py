@@ -116,9 +116,10 @@ def buy():
             ]
         )
         if user_cash + total >= 0:
+            newCash = user_cash + total
             db.execute(
                 "UPDATE users SET cash = (?) WHERE id = (?)",
-                user_cash + total,
+                newCash,
                 session["user_id"],
             )
             db.execute(
