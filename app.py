@@ -330,6 +330,7 @@ def sell():
                 user_cash + total,
                 session["user_id"],
             )
+            total = str(total)
             db.execute(
                 "INSERT INTO transactions (user_id, symbol, price, shares, total, timestamp) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)",
                 session["user_id"],
