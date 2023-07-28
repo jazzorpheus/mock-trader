@@ -122,7 +122,7 @@ def buy():
                 newCash,
                 session["user_id"],
             )
-            print("total is )
+            total = str(total)
             db.execute(
                 "INSERT INTO transactions (user_id, symbol, price, shares, total, timestamp) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)",
                 session["user_id"],
