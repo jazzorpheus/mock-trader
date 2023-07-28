@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block title %} Current Holdings {% endblock %} {%
+    block main %}
+    <div>
+      <table class="table table-striped-columns table-hover">
+        <tr>
+          <th>Symbol</th>
+          <th>Shares</th>
+          <th>Price</th>
+          <th>TOTAL</th>
+        </tr>
+        {% for i in range(count) %}
+        <tr>
+          <td>{{ userdata2[i]["symbol"] }}</td>
+          <td>{{ userdata2[i]["shares"] }}</td>
+          <td>{{ price_list[i] }}</td>
+          <td>{{ total_list[i] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <td>CASH</td>
+          <td></td>
+          <td></td>
+          <td>{{ user_cash }}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>{{ assets_total }}</td>
+        </tr>
+      </table>
+    </div>
+    {% endblock %}

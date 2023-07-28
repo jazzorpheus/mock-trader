@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History of transactions
+{% endblock %}
+
+{% block main %}
+    <div>
+        <table class="table table-striped-columns table-hover">
+            <tr>
+                <th>Action</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Total</th>
+                <th>Datetime</th>
+            </tr>
+            {% for i in range(count) %}
+                <tr>
+                    <td>{{ actions[i] }}</td>
+                    <td>{{ userdata[i]["symbol"] }}</td>
+                    <td>{{ shares[i] }}</td>
+                    <td>{{ totals[i] | usd }}</td>
+                    <td>{{ userdata[i]["timestamp"] }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
