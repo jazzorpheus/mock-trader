@@ -74,11 +74,11 @@ nav .navbar-brand .green
     font-weight: bold;
 }
 .nav-link.history {
-    background-color: #f5b82e;
+    background-color: #EEF78F;
     font-weight: bold;
 }
 .nav-link.add {
-    background-color: #EEF78F;
+    background-color: white;
     font-weight: bold;
 }
 
@@ -97,6 +97,6 @@ nav .navbar-brand .green
     background-color: white;
 }
 
-/* .nav-link {
+.nav-link {
     background-color: white !important;
-} */
+}
