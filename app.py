@@ -68,7 +68,7 @@ def index():
     # Initialize 2 lists: (i) current individual stock prices, (ii) total shares worth calculated by current stock price * no. of shares owned
     price_list = []
     total_list = []
-    # Initialize total assets variable a user's current cash (to be added to later)
+    # Initialize total assets variable as user's current cash (to be added to later)
     assets_total = user_cash
     count = len(userdata2)
     for i in range(count):
