@@ -51,15 +51,18 @@
 /* Colored Links */
 
 .nav-link.buy {
-    background-color: #3F84E5;
+    background-color: #a960ee;
+    background: linear-gradient(to right, #a960ee, #ff333d);
     font-weight: bold;
 }
 .nav-link.sell {
-    background-color: #BF1A2F;
+    background-color: #ff333d;
+    background: linear-gradient(to right, #ff333d, #90e0ff);
     font-weight: bold;
 }
 .nav-link.history {
-    background-color: #F00699;
+    background-color: #90e0ff;
+    background: linear-gradient(to right, #90e0ff, #ffcb57);
     font-weight: bold;
 }
 
