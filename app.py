@@ -46,7 +46,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-
+    print("Getting ready to show portfolio of stocks")
     # Lift relevant user data from transactions table
     userdata1 = db.execute(
         "SELECT symbol, SUM(shares) AS shares FROM transactions WHERE user_id=? GROUP BY symbol",
