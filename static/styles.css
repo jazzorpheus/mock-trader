@@ -25,7 +25,7 @@ nav .navbar-brand .green
 
 /* Navbar */
 .nav-container {
-    background-color: linear-gradient(to right, #163922, #8CB444);
+    background: linear-gradient(to right, #163922 10%, #8CB444);
 
 }
 
