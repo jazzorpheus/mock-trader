@@ -60,7 +60,7 @@ def index():
             userdata2.append(userdata1[i])
     # Lift user cash from users table
     user_cash = float(
-        db.execute("SELECT cash FROM users WHERE id = (?);", session["user_id"])[0][
+        db.execute("SELECT cash FROM users WHERE id = (?)", session["user_id"])[0][
             "cash"
         ]
     )
