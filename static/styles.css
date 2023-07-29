@@ -31,24 +31,30 @@ nav .navbar-brand .green
 
 
 .nav-item.quote {
-    background-color: #689534;
+    background-color: #EEF78F;
+    font-weight: bold;
 }
 .nav-item.buy {
-    background-color: #C1D688;
-
+    background-color: #8CB444;
+    font-weight: bold;
 }
 .nav-item.sell {
     background-color: #689534;
+    font-weight: bold;
 }
 .nav-item.history {
-    background-color: #EEF78F;
+    background-color: #C1D688;
+    font-weight: bold;
+
 
 }
 .nav-item.add {
-    background-color: #8CB444;
+    background-color: #EEF78F;
+    font-weight: bold;
 }
 .nav-item.logout {
     background-color: #8CB444;
+    font-weight: bold;
 }
 
 
@@ -58,3 +64,7 @@ nav .navbar-brand .green
 .nav-item.login {
     background-color: #8CB444;
 }
+
+/* .nav-item {
+    background-color: #FFECD1 !important;
+} */
