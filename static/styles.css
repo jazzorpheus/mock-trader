@@ -26,7 +26,22 @@ nav .navbar-brand .green
 /* Navbar */
 .nav-container {
     background-color: #163922;
+
 }
-.nav-link {
+
+
+.nav-item.quote {
+    background-color: #689534;
+}
+.nav-item.buy {
+    background-color: #8CB444;
+}
+.nav-item.sell {
+    background-color: #EEF78F;
+}
+.nav-item.history {
+    background-color: #C1D688;
+}
+.nav-item.add {
     background-color: #8CB444;
 }
