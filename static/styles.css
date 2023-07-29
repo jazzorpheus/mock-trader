@@ -29,8 +29,15 @@ nav .navbar-brand .green
 
 }
 
-
-@media (max-width: 1500px) {
+.navbar-brand {
+    width: 25%;
+}
+@media (max-width: 1400px) {
+    .navbar-brand {
+        width: 35%;
+    }
+}
+@media (max-width: 1200px) {
     .navbar-brand {
         width: 40%;
     }
