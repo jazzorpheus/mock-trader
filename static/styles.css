@@ -4,15 +4,8 @@
 /*  */
 /*  */
 
-a960ee
-ff333d
-90e0ff
-ffcb57
 .nav-container {
-    /* background: linear-gradient(to right, #163922 0%, #8CB444 35%); */
-    background: linear-gradient(to right, #a960ee, #a960ee 24%, #ff333d 25%, #90e0ff 50%, #ffcb57 75%);
-
-
+    background: linear-gradient(0.25turn, #a960ee, #ff333d, #90e0ff, #ffcb57);
 }
 
 .navbar-brand {
@@ -51,30 +44,38 @@ ffcb57
 
 .nav-link.quote {
     background-color: white;
+    background: linear-gradient(to right, white, #90e0ff);
     font-weight: bold;
 }
 
 /* Colored Links */
 
+/* a960ee
+ff333d
+90e0ff
+ffcb57 */
+
 .nav-link.buy {
     background-color: #a960ee;
-    background: linear-gradient(to right, #a960ee, #ff333d);
+    background: linear-gradient(to right, #90e0ff, #a960ee);
     font-weight: bold;
+    border-right: solid rgba(255,255,255,0.7) 1px;
 }
 .nav-link.sell {
     background-color: #ff333d;
-    background: linear-gradient(to right, #ff333d, #90e0ff);
+    background: linear-gradient(to right, #a960ee, #ff333d);
     font-weight: bold;
+    border-right: solid rgba(255,255,255,0.7) 1px;
 }
 .nav-link.history {
     background-color: #90e0ff;
-    background: linear-gradient(to right, #90e0ff, #ffcb57);
+    background: linear-gradient(to right, #ff333d, #ffcb57);
     font-weight: bold;
 }
 
 
 .nav-link.add {
-    background-color: white;
+    background: linear-gradient(to right, #ffcb57, white);
     font-weight: bold;
 }
 
