@@ -4,8 +4,14 @@
 /*  */
 /*  */
 
+a960ee
+ff333d
+90e0ff
+ffcb57
 .nav-container {
     background: linear-gradient(to right, #163922 0%, #8CB444 35%);
+    background: linear-gradient(to right, #a960ee 0%, #ff333d 25%, #90e0ff 50%, #ffcb57 75%);
+
 
 }
 
