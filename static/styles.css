@@ -30,45 +30,48 @@ nav .navbar-brand .green
 }
 
 
-.nav-item.quote {
+.navbar-brand {
+    width: 25%;
+}
+
+
+.nav-link.quote {
     background-color: white;
     font-weight: bold;
 }
 
-.nav-item.buy {
+.nav-link.buy {
     background-color: #537fbe;
     font-weight: bold;
 }
-.nav-item.sell {
+.nav-link.sell {
     background-color: #ea433b;
     font-weight: bold;
 }
-.nav-item.history {
+.nav-link.history {
     background-color: #f5b82e;
     font-weight: bold;
-
-
 }
-.nav-item.add {
+.nav-link.add {
     background-color: #EEF78F;
     font-weight: bold;
 }
 
 
-.nav-item.logout {
+.nav-link.logout {
     background-color: white;
     font-weight: bold;
 }
 
 
 
-.nav-item.register {
+.nav-link.register {
     background-color: white;
 }
-.nav-item.login {
+.nav-link.login {
     background-color: white;
 }
 
-/* .nav-item {
+/* .nav-link {
     background-color: white !important;
 } */
