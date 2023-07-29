@@ -30,9 +30,17 @@ nav .navbar-brand .green
 }
 
 
-.navbar-brand {
-    width: 100%;
+@media (max-width: 1000px) {
+    .navbar-brand {
+        width: 75%;
+    }
 }
+@media (max-width: 500px) {
+    .navbar-brand {
+        width: 100%;
+    }
+}
+
 
 
 .nav-link.quote {
