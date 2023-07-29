@@ -49,7 +49,8 @@ def index():
     print("Getting ready to show portfolio of stocks")
     # Lift relevant user data from transactions table
     userdata1 = db.execute(
-        "SELECT symbol, SUM(shares) AS shares FROM transactions WHERE user_id=? GROUP BY symbol",
+        # "SELECT symbol, SUM(shares) AS shares FROM transactions WHERE user_id=? GROUP BY symbol",
+        "SELECT symbol, shares FROM transactions WHERE user_id=? GROUP BY symbol",
         session["user_id"],
     )
     # Remove entries from user data where share number equals zero
