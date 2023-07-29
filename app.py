@@ -25,12 +25,12 @@ Session(app)
 
 # Configure CS50 Library to use SQLite database
 #   DEVELOPMENT
-db = SQL("sqlite:///finance.db")
+# db = SQL("sqlite:///finance.db")
 #   DEPLOYMENT
-# uri = os.getenv("DATABASE_URL")
-# if uri.startswith("postgres://"):
-#     uri = uri.replace("postgres://", "postgresql://")
-# db = SQL(uri)
+uri = os.getenv("DATABASE_URL")
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://")
+db = SQL(uri)
 
 
 @app.after_request
