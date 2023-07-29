@@ -34,14 +34,27 @@ nav .navbar-brand .green
     background-color: #689534;
 }
 .nav-item.buy {
-    background-color: #8CB444;
+    background-color: #C1D688;
+
 }
 .nav-item.sell {
     background-color: #EEF78F;
 }
 .nav-item.history {
-    background-color: #C1D688;
+    background-color: #EEF78F;
+
 }
 .nav-item.add {
+    background-color: #8CB444;
+}
+.nav-item.logout {
+    background-color: #8CB444;
+}
+
+
+.nav-item.register {
+    background-color: #8CB444;
+}
+.nav-item.login {
     background-color: #8CB444;
 }
