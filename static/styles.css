@@ -29,7 +29,11 @@ nav .navbar-brand .green
 
 }
 
-
+@media (max-width: 1500px) {
+    .navbar-brand {
+        width: 50%;
+    }
+}
 @media (max-width: 1000px) {
     .navbar-brand {
         width: 75%;
