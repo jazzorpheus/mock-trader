@@ -49,7 +49,7 @@ def index():
     print("Getting ready to show portfolio of stocks")
     # Lift relevant user data from transactions table
     userdata1 = db.execute(
-        "SELECT symbol, SUM(shares) AS shares FROM transactions WHERE user_id=? GROUP BY symbol;",
+        "SELECT symbol, SUM(shares) AS shares FROM transactions WHERE user_id=? GROUP BY symbol",
         session["user_id"],
     )
     # Remove entries from user data where share number equals zero
@@ -111,20 +111,20 @@ def buy():
         # Store purchase within purchases table in finance.db and subtract from user's cash
         total = -(float(quote["price"]) * int(request.form.get("shares")))
         user_cash = float(
-            db.execute("SELECT cash FROM users WHERE id = (?);", session["user_id"])[0][
+            db.execute("SELECT cash FROM users WHERE id = (?)", session["user_id"])[0][
                 "cash"
             ]
         )
         if user_cash + total >= 0:
             newCash = user_cash + total
             db.execute(
-                "UPDATE users SET cash = (?) WHERE id = (?);",
+                "UPDATE users SET cash = (?) WHERE id = (?)",
                 newCash,
                 session["user_id"],
             )
             total = str(total)
             db.execute(
-                "INSERT INTO transactions (user_id, symbol, price, shares, total, timestamp) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP);",
+                "INSERT INTO transactions (user_id, symbol, price, shares, total, timestamp) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)",
                 session["user_id"],
                 quote["symbol"],
                 quote["price"],
@@ -144,7 +144,7 @@ def history():
     """Show history of transactions"""
     # Lift relevant user data from transactions table
     userdata = db.execute(
-        "SELECT symbol, price, shares, total, timestamp FROM transactions WHERE user_id=?;",
+        "SELECT symbol, price, shares, total, timestamp FROM transactions WHERE user_id=?",
         session["user_id"],
     )
     count = len(userdata)
@@ -192,7 +192,7 @@ def login():
             return apology("must provide password", 403)
 
         # Query database for username
-        rows = db.execute("SELECT * FROM users WHERE username = ?;", request.form.get("username"))
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
 
         # Ensure username exists and password is correct
         if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
@@ -246,7 +246,7 @@ def register():
 
         # Check username not already in use
         user_list = []
-        for user in db.execute("SELECT username FROM users;"):
+        for user in db.execute("SELECT username FROM users"):
             user_list.append(user["username"])
         if request.form.get("username") in user_list:
             return apology("username already in use", 400)
@@ -264,14 +264,14 @@ def register():
             username = request.form.get("username")
             password_hash = generate_password_hash(request.form.get("password"))
             db.execute(
-                "INSERT INTO users (username, hash) VALUES (?, ?);",
+                "INSERT INTO users (username, hash) VALUES (?, ?)",
                 username,
                 password_hash,
             )
             # Log in new user
             # Query database for username
             rows = db.execute(
-                "SELECT * FROM users WHERE username = ?;", request.form.get("username")
+                "SELECT * FROM users WHERE username = ?", request.form.get("username")
             )
             # Ensure username exists and password is correct
             if len(rows) != 1 or not check_password_hash(
@@ -292,7 +292,7 @@ def sell():
     """Sell shares of stock"""
     # Lift relevant user data from transactions table
     userdata = db.execute(
-        "SELECT symbol, SUM(shares) AS shares FROM transactions WHERE user_id=? GROUP BY symbol;",
+        "SELECT symbol, SUM(shares) AS shares FROM transactions WHERE user_id=? GROUP BY symbol",
         session["user_id"],
     )
     count = len(userdata)
@@ -320,19 +320,19 @@ def sell():
             shares = int(request.form.get("shares"))
             total = shares * quote["price"]
             user_cash = float(
-                db.execute("SELECT cash FROM users WHERE id = (?);", session["user_id"])[
+                db.execute("SELECT cash FROM users WHERE id = (?)", session["user_id"])[
                     0
                 ]["cash"]
             )
             # Update users and transactions tables
             db.execute(
-                "UPDATE users SET cash = (?) WHERE id = (?);",
+                "UPDATE users SET cash = (?) WHERE id = (?)",
                 user_cash + total,
                 session["user_id"],
             )
             total = str(total)
             db.execute(
-                "INSERT INTO transactions (user_id, symbol, price, shares, total, timestamp) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP);",
+                "INSERT INTO transactions (user_id, symbol, price, shares, total, timestamp) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)",
                 session["user_id"],
                 quote["symbol"],
                 quote["price"],
@@ -345,7 +345,7 @@ def sell():
     else:
         # Lift relevant user data from transactions table
         userdata = db.execute(
-            "SELECT symbol, SUM(shares) AS shares FROM transactions WHERE user_id=? GROUP BY symbol;",
+            "SELECT symbol, SUM(shares) AS shares FROM transactions WHERE user_id=? GROUP BY symbol",
             session["user_id"],
         )
         count = len(userdata)
@@ -362,11 +362,11 @@ def add():
             return apology("Invalid cash entry")
         # Update users table with new amount of cash
         cash = float(request.form.get("cash"))
-        user_cash = db.execute("SELECT cash FROM users WHERE id=?;", session["user_id"])[
+        user_cash = db.execute("SELECT cash FROM users WHERE id=?", session["user_id"])[
             0
         ]["cash"]
         db.execute(
-            "UPDATE users SET cash = (?) WHERE id = (?);",
+            "UPDATE users SET cash = (?) WHERE id = (?)",
             user_cash + cash,
             session["user_id"],
         )
