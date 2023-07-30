@@ -88,12 +88,19 @@ ffcb57 */
 
 
 .nav-link.register {
-    background-color: white;
+    background-color: rgba(255,255,255,0.8);
+    font-weight: bold;
+    border-right: solid rgba(0,0,0,0.3) 1.5px;
 }
 .nav-link.login {
-    background-color: white;
+    background-color: rgba(255,255,255,0.9);
+    font-weight: bold;
 }
 
-/* .nav-link {
-    background-color: white !important;
-} */
+/*  */
+/* Buttons */
+/*  */
+
+.btn {
+    background-color: #0a2540;
+}
