@@ -1,3 +1,5 @@
+### USAGE in developer mode:
+
 #   flask run
 #   sqlite3 finance.db
 #   right-click "finance.db" and click "open in phpLiteAdmin"
