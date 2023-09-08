@@ -1,6 +1,6 @@
 # MockTrader
 
-### Video Demo: TBD
+### Video Demo: https://youtu.be/uEFdlHU87Ik
 
 ### DISCLAIMER:
 
